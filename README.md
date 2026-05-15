@@ -258,7 +258,7 @@ License
 
 GPL-3 © 2025 Mitra Ghotbi
 
-Contact
+**Contact**
 
 Maintainer: Mitra Ghotbi
 Email: mitra.ghotbi@gmail.com
