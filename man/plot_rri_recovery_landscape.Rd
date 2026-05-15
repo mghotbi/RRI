@@ -35,11 +35,11 @@ amplitudes, overshoot, incomplete recovery, and recovery times comparable.
 \examples{
 sim <- simulate_redox_holobiont(
   n_plot = 2,
-  n_depth = 1,
+  n_depth = 3,
   n_plant = 2,
   n_time = 12,
   p_micro = 20,
-  seed = 1
+  seed = 109
 )
 
 res <- rri_pipeline_st(
@@ -61,5 +61,6 @@ rec <- rri_recovery_metrics(
 )
 
 head(rec)
+plot_rri_recovery_landscape(rec)
 
 }

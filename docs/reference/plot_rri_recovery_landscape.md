@@ -50,11 +50,11 @@ A `ggplot` object.
 ``` r
 sim <- simulate_redox_holobiont(
   n_plot = 2,
-  n_depth = 1,
+  n_depth = 3,
   n_plant = 2,
   n_time = 12,
   p_micro = 20,
-  seed = 1
+  seed = 109
 )
 
 res <- rri_pipeline_st(
@@ -77,23 +77,33 @@ rec <- rri_recovery_metrics(
 
 head(rec)
 #>   plot depth plant_id        x0 xmin_perturb xmax_perturb x_extreme
-#> 1   P1    D1   Plant1 0.2384152    0.3713365    0.9644632 0.9644632
-#> 2   P2    D1   Plant1 0.1388000    0.6030127    0.9766382 0.9766382
-#> 3   P1    D1   Plant2 0.2943933    0.6328227    0.9761766 0.9761766
-#> 4   P2    D1   Plant2 0.1923865    0.5299607    0.9750439 0.9750439
-#>   perturb_direction xmin_recovery xmax_recovery       xeq         A   A_norm
-#> 1          increase     0.2744988     0.7873794 0.3169218 0.7260480 3.045309
-#> 2          increase     0.2001049     0.8181152 0.2355018 0.8378382 6.036299
-#> 3          increase     0.2633617     0.8740760 0.3776235 0.6817833 2.315893
-#> 4          increase     0.1383482     0.7863628 0.3414029 0.7826573 4.068150
-#>   tau_lag          O    O_norm          I    I_norm         k       k_r2 k_n
-#> 1       0 0.00000000 0.0000000 0.07850661 0.3292852 0.9396725 0.94822998   5
-#> 2       0 0.00000000 0.0000000 0.09670178 0.6966988 0.7067229 0.51590052   5
-#> 3       0 0.03103156 0.1054085 0.08323021 0.2827177 0.3206229 0.34257221   5
-#> 4       0 0.05403836 0.2808843 0.14901633 0.7745673 0.1121424 0.07793873   5
-#>            k_flag    tau_r    t_half  H trajectory_class
-#> 1              ok 1.064201 0.7376476 NA    fast_recovery
-#> 2              ok 1.414982 0.9807907 NA    fast_recovery
-#> 3              ok 3.118928 2.1618765 NA    fast_recovery
-#> 4 low_fit_quality 8.917231 6.1809532 NA    slow_recovery
+#> 1   P1    D1   Plant1 0.1666895    0.1911321    0.7631028 0.7631028
+#> 2   P2    D1   Plant1 0.1441712    0.1501787    0.3859172 0.3859172
+#> 3   P1    D2   Plant1 0.2631689    0.0821912    0.9397771 0.9397771
+#> 4   P2    D2   Plant1 0.4622820    0.7522711    0.9558848 0.9558848
+#> 5   P1    D3   Plant1 0.5581961    0.8904897    0.9563755 0.9563755
+#> 6   P2    D3   Plant1 0.6182729    0.8203454    0.9775123 0.9775123
+#>   perturb_direction xmin_recovery xmax_recovery       xeq         A    A_norm
+#> 1          increase    0.17890974     0.3442096 0.2532884 0.5964133 3.5779889
+#> 2          increase    0.02753112     0.2285998 0.1579083 0.2417460 1.6767975
+#> 3          increase    0.36015518     0.8505589 0.5381607 0.6766081 2.5710030
+#> 4          increase    0.14365060     0.8583562 0.2839480 0.4936028 1.0677524
+#> 5          increase    0.52236666     0.8870628 0.7136611 0.3981794 0.7133325
+#> 6          increase    0.37181540     0.8182219 0.6261845 0.3592394 0.5810370
+#>   tau_lag          O     O_norm           I     I_norm          k         k_r2
+#> 1       0 0.00000000 0.00000000 0.086598865 0.51952194 0.14523048 0.0585174941
+#> 2       1 0.11664011 0.80903873 0.013737027 0.09528272 0.08836949 0.0478912959
+#> 3       0 0.00000000 0.00000000 0.274991791 1.04492492 0.06116515 0.0204734550
+#> 4       0 0.31863142 0.68925765 0.178334058 0.38576897 0.25857627 0.1074052966
+#> 5       0 0.03582942 0.06418787 0.155465043 0.27851332         NA 0.0005677983
+#> 6       0 0.24645750 0.39862252 0.007911643 0.01279636         NA 0.0307292419
+#>   k_n                    k_flag     tau_r    t_half  H    trajectory_class
+#> 1   5           low_fit_quality  6.885607  4.772739 NA       slow_recovery
+#> 2   5           low_fit_quality 11.316123  7.843739 NA           overshoot
+#> 3   5           low_fit_quality 16.349178 11.332387 NA incomplete_recovery
+#> 4   5           low_fit_quality  3.867331  2.680630 NA incomplete_recovery
+#> 5   5 nonpositive_recovery_rate        NA        NA NA incomplete_recovery
+#> 6   5 nonpositive_recovery_rate        NA        NA NA           overshoot
+plot_rri_recovery_landscape(rec)
+
 ```

@@ -89,11 +89,11 @@ amplitudes, overshoot, incomplete recovery, and recovery times comparable.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="simulate_redox_holobiont.html">simulate_redox_holobiont</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  n_plot <span class="op">=</span> <span class="fl">2</span>,</span></span>
-<span class="r-in"><span>  n_depth <span class="op">=</span> <span class="fl">1</span>,</span></span>
+<span class="r-in"><span>  n_depth <span class="op">=</span> <span class="fl">3</span>,</span></span>
 <span class="r-in"><span>  n_plant <span class="op">=</span> <span class="fl">2</span>,</span></span>
 <span class="r-in"><span>  n_time <span class="op">=</span> <span class="fl">12</span>,</span></span>
 <span class="r-in"><span>  p_micro <span class="op">=</span> <span class="fl">20</span>,</span></span>
-<span class="r-in"><span>  seed <span class="op">=</span> <span class="fl">1</span></span></span>
+<span class="r-in"><span>  seed <span class="op">=</span> <span class="fl">109</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="rri_pipeline_st.html">rri_pipeline_st</a></span><span class="op">(</span></span></span>
@@ -116,25 +116,35 @@ amplitudes, overshoot, incomplete recovery, and recovery times comparable.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">rec</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   plot depth plant_id        x0 xmin_perturb xmax_perturb x_extreme</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   P1    D1   Plant1 0.2384152    0.3713365    0.9644632 0.9644632</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   P2    D1   Plant1 0.1388000    0.6030127    0.9766382 0.9766382</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   P1    D1   Plant2 0.2943933    0.6328227    0.9761766 0.9761766</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   P2    D1   Plant2 0.1923865    0.5299607    0.9750439 0.9750439</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   perturb_direction xmin_recovery xmax_recovery       xeq         A   A_norm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1          increase     0.2744988     0.7873794 0.3169218 0.7260480 3.045309</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2          increase     0.2001049     0.8181152 0.2355018 0.8378382 6.036299</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3          increase     0.2633617     0.8740760 0.3776235 0.6817833 2.315893</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4          increase     0.1383482     0.7863628 0.3414029 0.7826573 4.068150</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   tau_lag          O    O_norm          I    I_norm         k       k_r2 k_n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       0 0.00000000 0.0000000 0.07850661 0.3292852 0.9396725 0.94822998   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       0 0.00000000 0.0000000 0.09670178 0.6966988 0.7067229 0.51590052   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3       0 0.03103156 0.1054085 0.08323021 0.2827177 0.3206229 0.34257221   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       0 0.05403836 0.2808843 0.14901633 0.7745673 0.1121424 0.07793873   5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            k_flag    tau_r    t_half  H trajectory_class</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1              ok 1.064201 0.7376476 NA    fast_recovery</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2              ok 1.414982 0.9807907 NA    fast_recovery</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3              ok 3.118928 2.1618765 NA    fast_recovery</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 low_fit_quality 8.917231 6.1809532 NA    slow_recovery</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   P1    D1   Plant1 0.1666895    0.1911321    0.7631028 0.7631028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   P2    D1   Plant1 0.1441712    0.1501787    0.3859172 0.3859172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   P1    D2   Plant1 0.2631689    0.0821912    0.9397771 0.9397771</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   P2    D2   Plant1 0.4622820    0.7522711    0.9558848 0.9558848</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   P1    D3   Plant1 0.5581961    0.8904897    0.9563755 0.9563755</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   P2    D3   Plant1 0.6182729    0.8203454    0.9775123 0.9775123</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   perturb_direction xmin_recovery xmax_recovery       xeq         A    A_norm</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1          increase    0.17890974     0.3442096 0.2532884 0.5964133 3.5779889</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2          increase    0.02753112     0.2285998 0.1579083 0.2417460 1.6767975</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3          increase    0.36015518     0.8505589 0.5381607 0.6766081 2.5710030</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4          increase    0.14365060     0.8583562 0.2839480 0.4936028 1.0677524</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5          increase    0.52236666     0.8870628 0.7136611 0.3981794 0.7133325</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6          increase    0.37181540     0.8182219 0.6261845 0.3592394 0.5810370</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   tau_lag          O     O_norm           I     I_norm          k         k_r2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1       0 0.00000000 0.00000000 0.086598865 0.51952194 0.14523048 0.0585174941</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2       1 0.11664011 0.80903873 0.013737027 0.09528272 0.08836949 0.0478912959</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3       0 0.00000000 0.00000000 0.274991791 1.04492492 0.06116515 0.0204734550</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4       0 0.31863142 0.68925765 0.178334058 0.38576897 0.25857627 0.1074052966</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5       0 0.03582942 0.06418787 0.155465043 0.27851332         NA 0.0005677983</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6       0 0.24645750 0.39862252 0.007911643 0.01279636         NA 0.0307292419</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   k_n                    k_flag     tau_r    t_half  H    trajectory_class</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   5           low_fit_quality  6.885607  4.772739 NA       slow_recovery</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   5           low_fit_quality 11.316123  7.843739 NA           overshoot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   5           low_fit_quality 16.349178 11.332387 NA incomplete_recovery</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   5           low_fit_quality  3.867331  2.680630 NA incomplete_recovery</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   5 nonpositive_recovery_rate        NA        NA NA incomplete_recovery</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   5 nonpositive_recovery_rate        NA        NA NA           overshoot</span>
+<span class="r-in"><span><span class="fu">plot_rri_recovery_landscape</span><span class="op">(</span><span class="va">rec</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="plot_rri_recovery_landscape-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
