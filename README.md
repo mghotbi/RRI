@@ -62,7 +62,7 @@ install.packages("remotes")
 remotes::install_github("mghotbi/RRI")
 ```
 
-To install with vignettes:
+**To install with vignettes:**
 
 ```r
 install.packages("remotes")
@@ -77,7 +77,7 @@ remotes::install_github(
 )
 ```
 
-Basic example
+**Basic example**
 
 ```r
 library(RRI)
@@ -103,8 +103,8 @@ head(res$row_scores_comp)
 ```
 
 
-Adding microbial functional information
-
+**Adding microbial functional information
+**
 Users are not limited to microbial abundance data. Functional microbial
 information can be added to the microbial domain when available.
 
@@ -176,7 +176,7 @@ incomplete recovery, recovery rate, recovery fit diagnostics, recovery
 timescale, half-recovery time, hysteresis, and trajectory class.
 
 
-Output structure
+**Output structure**
 
 The primary output from rri_pipeline_st() contains:
 
@@ -186,7 +186,7 @@ meta: model settings and system-level RRI metadata.
 
 The compositional output is directly compatible with plot_RRI_ternary().
 
-Additional utilities
+**Additional utilities**
 
 RRI includes helper functions for diagnostics, sensitivity analysis, recovery
 metrics, and visualization:
@@ -200,6 +200,7 @@ rri_sensitivity(res)
 plot_RRI_ternary(res$row_scores_comp)
 plot_rri_recovery_map(rec)
 plot_rri_recovery_landscape(rec)
+
 
 ```
 
@@ -245,7 +246,8 @@ directionally aligned index. Perturbation-recovery functions then quantify how
 the RRI trajectory changes through time, including amplitude, lag, overshoot,
 incomplete recovery, recovery rate, hysteresis, and trajectory class.
 
-Citation
+**Citation**
+
 ```r
 citation("RRI")
 ```
