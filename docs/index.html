@@ -102,7 +102,7 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mghotbi/RRI"</span><span class="op">)</span></span></code></pre></div>
-<p>To install with vignettes:</p>
+<p><strong>To install with vignettes:</strong></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span></span>
@@ -114,7 +114,7 @@
 <span>  build_vignettes <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  dependencies <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<p>Basic example</p>
+<p><strong>Basic example</strong></p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mghotbi/RRI" class="external-link">RRI</a></span><span class="op">)</span></span>
 <span></span>
@@ -136,8 +136,7 @@
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">res</span><span class="op">$</span><span class="va">row_scores</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">res</span><span class="op">$</span><span class="va">row_scores_comp</span><span class="op">)</span></span></code></pre></div>
-<p>Adding microbial functional information</p>
-<p>Users are not limited to microbial abundance data. Functional microbial information can be added to the microbial domain when available.</p>
+<p><strong>Adding microbial functional information </strong> Users are not limited to microbial abundance data. Functional microbial information can be added to the microbial domain when available.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">micro_features</span> <span class="op">&lt;-</span> <span class="va">sim</span><span class="op">$</span><span class="va">micro_data</span></span>
 <span></span>
@@ -187,11 +186,11 @@
 <span></span>
 <span><span class="fu"><a href="reference/rri_metric_table.html">rri_metric_table</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Recovery metrics include perturbation amplitude, lag time, overshoot, incomplete recovery, recovery rate, recovery fit diagnostics, recovery timescale, half-recovery time, hysteresis, and trajectory class.</p>
-<p>Output structure</p>
+<p><strong>Output structure</strong></p>
 <p>The primary output from rri_pipeline_st() contains:</p>
 <p>row_scores: absolute Physio, Soil, Micro, and RRI scores. row_scores_comp: compositional Physio-Soil-Micro allocation scores. meta: model settings and system-level RRI metadata.</p>
 <p>The compositional output is directly compatible with plot_RRI_ternary().</p>
-<p>Additional utilities</p>
+<p><strong>Additional utilities</strong></p>
 <p>RRI includes helper functions for diagnostics, sensitivity analysis, recovery metrics, and visualization:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/rri_latent_correlation.html">rri_latent_correlation</a></span><span class="op">(</span><span class="va">res</span>, <span class="va">sim</span><span class="op">$</span><span class="va">latent_truth</span><span class="op">)</span></span>
@@ -201,7 +200,6 @@
 <span><span class="fu"><a href="reference/plot_RRI_ternary.html">plot_RRI_ternary</a></span><span class="op">(</span><span class="va">res</span><span class="op">$</span><span class="va">row_scores_comp</span><span class="op">)</span></span>
 <span><span class="fu">plot_rri_recovery_map</span><span class="op">(</span><span class="va">rec</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/plot_rri_recovery_landscape.html">plot_rri_recovery_landscape</a></span><span class="op">(</span><span class="va">rec</span><span class="op">)</span></span></code></pre></div>
-<p>Design philosophy</p>
 </div>
 <div class="section level2">
 <h2 id="brief-theory-redox-resilience-as-buffering-connectivity-memory-and-recovery">Brief theory: redox resilience as buffering, connectivity, memory, and recovery<a class="anchor" aria-label="anchor" href="#brief-theory-redox-resilience-as-buffering-connectivity-memory-and-recovery"></a>
@@ -216,7 +214,7 @@
 <li><p><strong>Recovery</strong>: the trajectory after perturbation, including return to the original state, transient overshoot, incomplete recovery, or transition to a new equilibrium.</p></li>
 </ul>
 <p>RRI summarizes these interacting processes by integrating plant physiological buffering, soil redox stability, and microbial resilience into a single directionally aligned index. Perturbation-recovery functions then quantify how the RRI trajectory changes through time, including amplitude, lag, overshoot, incomplete recovery, recovery rate, hysteresis, and trajectory class.</p>
-<p>Citation</p>
+<p><strong>Citation</strong></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"RRI"</span><span class="op">)</span></span></code></pre></div>
 <p>Ghotbi, M. et al. RRI: A framework for holobiont-level redox resilience (manuscript in preparation).</p>
