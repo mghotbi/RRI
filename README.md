@@ -202,7 +202,6 @@ plot_rri_recovery_map(rec)
 plot_rri_recovery_landscape(rec)
 
 ```
-Design philosophy
 
 ## Brief theory: redox resilience as buffering, connectivity, memory, and recovery
 
