@@ -1240,6 +1240,7 @@ The optional compensation term increases RRI when negative
 cross-domain covariance is detected, reflecting compensatory 
 dynamics among domains.
 
+
 ### RRI-utilities
 
 ```{r additional-rri-utilities}
