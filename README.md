@@ -101,8 +101,8 @@ BiocManager::install(c("BiocStyle", "rmarkdown", "knitr"))
 remotes::install_github(
   "mghotbi/RRI",
   build_vignettes = TRUE,
-  dependencies = TRUE
-)
+  dependencies = TRUE)
+
 ```
 
 **Basic example**
@@ -123,11 +123,11 @@ res <- rri_pipeline_st(
   direction_anchor_phys = "FvFm",
   direction_soil = "auto",
   direction_anchor_soil = "Eh",
-  direction_micro = "higher_is_better"
-)
+  direction_micro = "higher_is_better")
 
 head(res$row_scores)
 head(res$row_scores_comp)
+
 ```
 
 
@@ -162,8 +162,8 @@ res_full <- rri_pipeline_st(
   direction_anchor_phys = "FvFm",
   direction_soil = "auto",
   direction_anchor_soil = "Eh",
-  direction_micro = "higher_is_better"
-)
+  direction_micro = "higher_is_better")
+
 ```
 
 The minimal and expanded workflows are both valid. The expanded workflow simply
