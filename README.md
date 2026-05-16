@@ -36,6 +36,50 @@ perturbation-recovery metrics.
 - Computes perturbation-recovery metrics including amplitude, lag, overshoot, incomplete recovery, recovery rate, hysteresis, and trajectory class.
 - Provides diagnostic and sensitivity utilities for validation and robustness checks.
 
+  
+## Brief theory: redox resilience as buffering, connectivity, memory, and recovery
+
+Redox resilience reflects the capacity of a soil-plant-microbiome system to
+absorb, transmit, and recover from perturbations that alter electron flow.
+In this framework, resilience is not treated as a single trait, but as an
+emergent property of several interacting redox processes:
+
+- **Capacity**: the size of electron-accepting and electron-donating pools,
+  such as Fe/Mn oxides, organic matter, clays, humic substances, and other
+  redox-active phases. High capacity allows the system to buffer electron
+  imbalance before crossing critical redox thresholds.
+
+- **Connectivity**: the physical and biochemical linkage among electron
+  donors, electron acceptors, roots, microbes, minerals, and water-filled pore
+  networks. Connectivity controls whether electrons, oxygen, substrates, and
+  microbial processes remain spatially coupled or become locally isolated.
+
+- **Kinetics**: the rate at which redox reactions proceed relative to
+  hydrological or environmental forcing. Fast forcing combined with slow
+  microbial, mineral, or diffusion-mediated responses can generate lag,
+  transient disequilibrium, and redox pulses.
+
+- **Memory**: the persistence of altered mineral, organic, microbial, or plant
+  states after the original perturbation ends. Memory can arise from residual
+  reduced minerals, redox-active organic matter, shifted microbial communities,
+  enzyme pools, or plant acclimation.
+
+- **Hysteresis**: path dependence in which wetting and drying, reduction and
+  oxidation, or disturbance and recovery do not follow the same trajectory.
+  Hysteresis indicates that the current state depends not only on present
+  conditions, but also on the sequence of previous states.
+
+- **Recovery**: the trajectory after perturbation, including return to the
+  original state, transient overshoot, incomplete recovery, or transition to a
+  new equilibrium.
+
+RRI summarizes these interacting processes by integrating plant physiological
+buffering, soil redox stability, and microbial resilience into a single
+directionally aligned index. Perturbation-recovery functions then quantify how
+the RRI trajectory changes through time, including amplitude, lag, overshoot,
+incomplete recovery, recovery rate, hysteresis, and trajectory class.
+
+
 ## Conceptual framework
 
 Redox resilience at the holobiont scale emerges from interacting biological
@@ -162,8 +206,7 @@ rec <- rri_recovery_metrics(
   time_col = "time",
   group_cols = c("plot", "depth", "plant_id"),
   perturb_start = 5,
-  perturb_end = 7
-)
+  perturb_end = 7)
 
 head(rec)
 
@@ -204,57 +247,13 @@ plot_rri_recovery_landscape(rec)
 
 ```
 
-## Brief theory: redox resilience as buffering, connectivity, memory, and recovery
-
-Redox resilience reflects the capacity of a soil-plant-microbiome system to
-absorb, transmit, and recover from perturbations that alter electron flow.
-In this framework, resilience is not treated as a single trait, but as an
-emergent property of several interacting redox processes:
-
-- **Capacity**: the size of electron-accepting and electron-donating pools,
-  such as Fe/Mn oxides, organic matter, clays, humic substances, and other
-  redox-active phases. High capacity allows the system to buffer electron
-  imbalance before crossing critical redox thresholds.
-
-- **Connectivity**: the physical and biochemical linkage among electron
-  donors, electron acceptors, roots, microbes, minerals, and water-filled pore
-  networks. Connectivity controls whether electrons, oxygen, substrates, and
-  microbial processes remain spatially coupled or become locally isolated.
-
-- **Kinetics**: the rate at which redox reactions proceed relative to
-  hydrological or environmental forcing. Fast forcing combined with slow
-  microbial, mineral, or diffusion-mediated responses can generate lag,
-  transient disequilibrium, and redox pulses.
-
-- **Memory**: the persistence of altered mineral, organic, microbial, or plant
-  states after the original perturbation ends. Memory can arise from residual
-  reduced minerals, redox-active organic matter, shifted microbial communities,
-  enzyme pools, or plant acclimation.
-
-- **Hysteresis**: path dependence in which wetting and drying, reduction and
-  oxidation, or disturbance and recovery do not follow the same trajectory.
-  Hysteresis indicates that the current state depends not only on present
-  conditions, but also on the sequence of previous states.
-
-- **Recovery**: the trajectory after perturbation, including return to the
-  original state, transient overshoot, incomplete recovery, or transition to a
-  new equilibrium.
-
-RRI summarizes these interacting processes by integrating plant physiological
-buffering, soil redox stability, and microbial resilience into a single
-directionally aligned index. Perturbation-recovery functions then quantify how
-the RRI trajectory changes through time, including amplitude, lag, overshoot,
-incomplete recovery, recovery rate, hysteresis, and trajectory class.
-
 **Citation**
 
 ```r
 citation("RRI")
 ```
 
-Ghotbi, M. et al. RRI: A framework for holobiont-level redox resilience
-(manuscript in preparation).
-
+Ghotbi, M. et al. RRI: A framework for holobiont-level redox resilience (manuscript in preparation).
 License
 
 GPL-3 © 2025 Mitra Ghotbi
