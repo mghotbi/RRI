@@ -19,6 +19,8 @@ The package supports spatial structure, temporal dynamics, directionally
 identified latent scores, ternary visualization, sensitivity analysis, and
 perturbation-recovery metrics.
 
+
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/c64a2965-0413-41dc-952d-a7d0ce4017a4"
        alt="Conceptual overview of the RRI framework"
@@ -79,24 +81,6 @@ directionally aligned index. Perturbation-recovery functions then quantify how
 the RRI trajectory changes through time, including amplitude, lag, overshoot,
 incomplete recovery, recovery rate, hysteresis, and trajectory class.
 
-
-## Conceptual framework
-
-Redox resilience at the holobiont scale emerges from interacting biological
-subsystems rather than any single measurable trait. RRI summarizes each domain
-using a latent score derived from multivariate indicators. These domain scores
-are directionally aligned, scaled, and integrated into a composite index.
-
-The three core domains are:
-
-- **Physio**: plant oxidative buffering and physiological stress response.
-- **Soil**: soil redox chemistry, hydrology, and electron-transfer stability.
-- **Micro**: microbial abundance, functional capacity, traits, genes, expression, or network organization.
-
-The microbial domain is flexible. It may contain taxonomic abundance,
-functional composition, microbial traits, gene abundance, functional gene
-coverage, metagenomic features, metatranscriptomic expression, gene
-upregulation summaries, pathway-level features, or ecological network metrics.
 
 ## Installation
 
